@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoOutBurgas.Pages.RegisterPage"
+             Title="RegisterPage">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <!--Register Label-->
+            <VerticalStackLayout>
+                <Label Text="Register!" FontSize="28" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+                <Label Text="Please enter your data" FontSize="18" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+            </VerticalStackLayout>
+
+            <!--Email Layout-->
+            <StackLayout Orientation="Horizontal">
+                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30">
+                    <Image
+                Source="thisisformail.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                </Frame>
+                <!--Textbox Email-->
+                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                    <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" 
+                           Keyboard="Email" TextColor="Gray" ClearButtonVisibility="WhileEditing" MaxLength="20"
+                           x:Name ="Email"/>
+
+                </Frame>
+            </StackLayout>
+
+            <!--Password TextBox-->
+            <StackLayout Orientation="Horizontal">
+                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
+                    <Image
+                Source="lock.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                </Frame>
+
+                <!--Textbox Password-->
+                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                    <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
+                           IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
+                           MaxLength="20" MaximumHeightRequest="50"
+                           x:Name ="Pass"/>
+                </Frame>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
+                    <Image
+                    Source="lock.png"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    HeightRequest="200"
+                    HorizontalOptions="Center" />
+                </Frame>
+
+                <!--Textbox Password-->
+                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                    <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
+                               IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
+                               MaxLength="20" MaximumHeightRequest="50"
+                               x:Name ="Password">
+                    </Entry>
+                </Frame>
+
+            </StackLayout>
+
+            <!--ShowPass-->
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+
+                <Label Text="Show password" FontAttributes="Bold" FontSize="16"/>
+
+                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" x:Name="Check" Margin="-5,-5,0,0" />
+
+            </HorizontalStackLayout>
+
+            <!--ButtonLogin-->
+            <Button Text="Register" FontAttributes="Bold" TextColor="White"
+                    
+                VerticalOptions="Center" HorizontalOptions="Center"
+                    
+                Clicked="OnButtonClicked" FontSize="15" Margin="0" >
+
+            </Button>
+            
+        </VerticalStackLayout>
+        
+    </ScrollView>
+    
+</ContentPage>
