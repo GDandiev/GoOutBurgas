@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              x:Class="GoOutBurgas.Pages.LoginPage">
+              x:Class="GoOutBurgas.Pages.LoginPage"
+             Title="" >
 
     <ScrollView VerticalOptions="FillAndExpand">
         <VerticalStackLayout
@@ -18,14 +19,14 @@
 
             <!--Login Label-->
             <VerticalStackLayout>
-                <Label Text="Welcome!" FontSize="28" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
-                <Label Text="Login to your account" FontSize="18" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+                <!--<Label Text="Welcome!" FontSize="28" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>-->
+                <Label Text="Sign in" FontSize="30" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
             </VerticalStackLayout>
 
             <!--Email Layout-->
             <StackLayout Orientation="Horizontal" Margin="-25,0,0,0">
                 
-                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30">
+                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="70" WidthRequest="70" CornerRadius="100">
                     <Image Source="thisisformail.png"
                            HeightRequest="200"
                            HorizontalOptions="Center" >
@@ -47,7 +48,7 @@
             <!--Password TextBox-->
             <StackLayout Orientation="Horizontal" Margin="-25,0,0,0" >
                 
-                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
+                <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="70" WidthRequest="70" CornerRadius="100" >
 
                     <Image Source="lock.png"
                             SemanticProperties.Description="Cute dot net bot waving hi to you!"
