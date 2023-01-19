@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using GoOutBurgas.Pages;
 using GoOutBurgas.Data;
+using CommunityToolkit.Maui;
+
 namespace GoOutBurgas;
 
 public static class MauiProgram
@@ -8,7 +10,8 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
-		builder
+        builder.UseMauiCommunityToolkit();
+        builder
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
