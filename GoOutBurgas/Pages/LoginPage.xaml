@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoOutBurgas.Pages.LoginPage"
-             Title="LoginPage">
+              x:Class="GoOutBurgas.Pages.LoginPage">
 
-    <ScrollView>
+    <ScrollView VerticalOptions="FillAndExpand">
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -12,7 +11,7 @@
 
             <!--Main Image-->
             <Image
-                Source="cutebot.png"
+                Source="logoclear.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
@@ -25,38 +24,48 @@
 
             <!--Email Layout-->
             <StackLayout Orientation="Horizontal" Margin="-25,0,0,0">
+                
                 <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30">
-                    <Image
-                Source="thisisformail.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                    <Image Source="thisisformail.png"
+                           HeightRequest="200"
+                           HorizontalOptions="Center" >
+                    </Image>
                 </Frame>
 
                 <!--Textbox Email-->
                 <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand" Margin="0,0,-17,0">
+
                     <Entry Margin="0,0,-10,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" 
                            Keyboard="Email" TextColor="Gray" ClearButtonVisibility="WhileEditing" MaxLength="20"
-                           x:Name ="Email" IsTextPredictionEnabled="True"/>
+                           x:Name ="Email" IsTextPredictionEnabled="True">
+                    </Entry>
+                    
                 </Frame>
+                
             </StackLayout>
 
             <!--Password TextBox-->
             <StackLayout Orientation="Horizontal" Margin="-25,0,0,0" >
+                
                 <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
-                    <Image
-                Source="lock.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+
+                    <Image Source="lock.png"
+                            SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                            HeightRequest="200"
+                            HorizontalOptions="Center" >
+                    </Image>
+                    
                 </Frame>
 
                 <!--Textbox Password-->
                 <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand" Margin="0,0,-17,0">
+
                     <Entry Margin="0,0,-10,0" VerticalOptions="Center" Placeholder="Password" 
                            IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
                            MaxLength="20" MaximumHeightRequest="50" 
-                           x:Name ="Pass" IsTextPredictionEnabled="True"/>
+                           x:Name ="Pass" IsTextPredictionEnabled="True">
+                    </Entry>
+                    
                 </Frame>
 
             </StackLayout>

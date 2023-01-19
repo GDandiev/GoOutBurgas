@@ -1,3 +1,5 @@
+using Map = Microsoft.Maui.Controls.Maps.Map;
+
 namespace GoOutBurgas.Pages;
 
 public partial class MapPage : ContentPage
@@ -5,5 +7,8 @@ public partial class MapPage : ContentPage
 	public MapPage()
 	{
 		InitializeComponent();
-	}
+
+        Map map = new Map();
+        Content = map;
+    }
 }

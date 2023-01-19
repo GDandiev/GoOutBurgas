@@ -49,12 +49,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\cutebot.png" />
+	  <None Remove="Resources\Images\lock.png" />
+	  <None Remove="Resources\Images\logoclear.png" />
+	  <None Remove="Resources\Images\thisisformail.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
 		<PackageReference Include="Microsoft.Maui.Maps" Version="7.0.52" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-		<PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
-		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.4" />
+    <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.4" />
+    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.4" />
+    <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.4" />
 	</ItemGroup>
 
 	<ItemGroup>
