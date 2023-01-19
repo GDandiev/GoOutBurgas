@@ -17,6 +17,7 @@
     
 
     <ScrollView>
+        
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -24,72 +25,92 @@
 
             <!--Register Label-->
             <VerticalStackLayout>
+                
                 <Label Text="Register!" FontSize="28" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+                
                 <Label Text="Please enter your data" FontSize="18" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+                
             </VerticalStackLayout>
             
             <!--Email Layout-->
             <StackLayout Orientation="Horizontal">
+                
                 <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30">
-                    <Image
-                Source="thisisformail.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                    
+                    <Image Source="thisisformail.png"
+                           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                           HeightRequest="200"
+                           HorizontalOptions="Center" >
+                    </Image>
+                    
                 </Frame>
+                
                 <!--Textbox Email-->
                 <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                    
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" 
                            Keyboard="Email" ClearButtonVisibility="WhileEditing" MaxLength="20"
                            x:Name ="Email">
+                        
                         <Entry.Behaviors>
+                            
                             <toolkit:EmailValidationBehavior 
                             InvalidStyle="{StaticResource InvalidEntryStyle}"
                             ValidStyle="{StaticResource ValidEntryStyle}"
                             Flags="ValidateOnValueChanged" />
+                            
                         </Entry.Behaviors>
                         
                     </Entry>
                     
                 </Frame>
+                
             </StackLayout>
 
             <!--Password TextBox-->
             <StackLayout Orientation="Horizontal">
+                
                 <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
-                    <Image
-                Source="lock.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                    
+                    <Image Source="lock.png"
+                           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                           HeightRequest="200"
+                           HorizontalOptions="Center" >
+                    </Image>
+                    
                 </Frame>
 
                 <!--Textbox Password-->
                 <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
                            IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
                            MaxLength="20" MaximumHeightRequest="50"
-                           x:Name ="Pass"/>
+                           x:Name ="Pass">
+                    </Entry>
+                    
                 </Frame>
 
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
+                
                 <Frame HasShadow="True" BorderColor="#F5FFFF" HeightRequest="50" WidthRequest="50" CornerRadius="30" >
-                    <Image
-                    Source="lock.png"
-                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                    HeightRequest="200"
-                    HorizontalOptions="Center" />
+                    <Image Source="lock.png"
+                           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                           HeightRequest="200"
+                           HorizontalOptions="Center" />
                 </Frame>
 
                 <!--Textbox Password-->
                 <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                    
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
-                               IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
-                               MaxLength="20" MaximumHeightRequest="50"
-                               x:Name ="Password">
+                           IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
+                           MaxLength="20" MaximumHeightRequest="50"
+                           x:Name ="Password">
                     </Entry>
+                    
                 </Frame>
 
             </StackLayout>
@@ -105,11 +126,8 @@
 
             <!--ButtonLogin-->
             <Button Text="Register" FontAttributes="Bold" TextColor="White"
-                    
-                VerticalOptions="Center" HorizontalOptions="Center"
-                    
-                Clicked="OnButtonClicked" FontSize="15" Margin="0" >
-
+                    VerticalOptions="Center" HorizontalOptions="Center"
+                    Clicked="OnButtonClicked" FontSize="15" Margin="0" >
             </Button>
             
         </VerticalStackLayout>

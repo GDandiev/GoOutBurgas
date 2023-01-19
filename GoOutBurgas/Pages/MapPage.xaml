@@ -7,6 +7,22 @@
              Title="MapPage">
 
     <Grid>
+        <maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid">
+            <x:Arguments>
+                <MapSpan>
+                    <x:Arguments>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>42.50490320824206</x:Double>
+                                <x:Double>27.46235734563842</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                        <x:Double>0.01</x:Double>
+                        <x:Double>0.01</x:Double>
+                    </x:Arguments>
+                </MapSpan>
+            </x:Arguments>
+        </maps:Map>
         <!--<maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid">
             <x:Arguments>
                 <MapSpan>
