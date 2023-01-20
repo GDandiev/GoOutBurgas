@@ -6,8 +6,7 @@
     xmlns:local="clr-namespace:GoOutBurgas"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
+    <ShellContent Shell.TabBarIsVisible="False"
         ContentTemplate="{DataTemplate local:Pages.LoginPage}"
         Route="LoginPage" />
 
