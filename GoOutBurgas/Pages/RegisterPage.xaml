@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="GoOutBurgas.Pages.RegisterPage"
-             Title="RegisterPage">
+             x:Class="GoOutBurgas.Pages.RegisterPage">
 
 
     <ContentPage.Resources>
@@ -11,7 +10,7 @@
             <Setter Property="TextColor" Value="Red" />
         </Style>
         <Style x:Key="ValidEntryStyle" TargetType="Entry">
-            <Setter Property="TextColor" Value="SlateBlue" />
+            <Setter Property="TextColor" Value="#2b62aa" />
         </Style>
     </ContentPage.Resources>
     
@@ -25,10 +24,10 @@
 
             <!--Register Label-->
             <VerticalStackLayout>
+
+                <Label Text="Register!" FontSize="28" TextColor="#2b62aa" HorizontalTextAlignment ="Center"/>
                 
-                <Label Text="Register!" FontSize="28" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
-                
-                <Label Text="Please enter your data" FontSize="18" TextColor="SlateBlue" HorizontalTextAlignment ="Center"/>
+                <Label Text="Please enter your data" FontSize="18" TextColor="#2b62aa" HorizontalTextAlignment ="Center"/>
                 
             </VerticalStackLayout>
             
@@ -46,7 +45,7 @@
                 </Frame>
                 
                 <!--Textbox Email-->
-                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                <Frame BorderColor="#2b62aa" HorizontalOptions="FillAndExpand">
                     
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" 
                            Keyboard="Email" ClearButtonVisibility="WhileEditing" MaxLength="20"
@@ -81,7 +80,7 @@
                 </Frame>
 
                 <!--Textbox Password-->
-                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                <Frame BorderColor="#2b62aa" HorizontalOptions="FillAndExpand">
 
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
                            IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
@@ -103,7 +102,7 @@
                 </Frame>
 
                 <!--Textbox Password-->
-                <Frame BorderColor="SlateBlue" HorizontalOptions="FillAndExpand">
+                <Frame BorderColor="#2b62aa" HorizontalOptions="FillAndExpand">
                     
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Password" 
                            IsPassword="True" TextColor="Gray" ClearButtonVisibility="WhileEditing"
@@ -120,12 +119,12 @@
 
                 <Label Text="Show password" FontAttributes="Bold" FontSize="16"/>
 
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" x:Name="Check" Margin="-5,-5,0,0" />
+                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" x:Name="Check" Color="#2b62aa" Margin="-5,-5,0,0" />
 
             </HorizontalStackLayout>
 
             <!--ButtonLogin-->
-            <Button Text="Register" FontAttributes="Bold" TextColor="White"
+            <Button Text="Register" FontAttributes="Bold" TextColor="White" BackgroundColor="#2b62aa"
                     VerticalOptions="Center" HorizontalOptions="Center"
                     Clicked="OnButtonClicked" FontSize="15" Margin="0" >
             </Button>

@@ -11,7 +11,7 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
         ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
 
-        Application.Current.UserAppTheme = AppTheme.Light;
+        //Application.Current.UserAppTheme = AppTheme.Light;
         //if (mergedDictionaries != null)
         //{
         //    mergedDictionaries.Clear();

@@ -4,7 +4,7 @@
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
               x:Class="GoOutBurgas.Pages.MapPage "
-             Title="MapPage">
+             Title="Map">
 
     <Grid>
         <maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid">
