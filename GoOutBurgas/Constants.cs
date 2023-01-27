@@ -26,7 +26,8 @@ namespace GoOutBurgas
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }
+
         //public static string DatabasePath =>
-        //    Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
+        //Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
     }
 }

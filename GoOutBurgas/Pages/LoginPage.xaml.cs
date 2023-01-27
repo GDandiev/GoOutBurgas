@@ -28,12 +28,14 @@ public partial class LoginPage : ContentPage
     {
         //  await Navigation.PushAsync(new NavigationPage(new MapPage()));
 
+        Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+
         var email = Email.Text;
         var pass = Pass.Text;
      
         if (string.IsNullOrEmpty(Email.Text) && string.IsNullOrEmpty(Pass.Text))
         {
-            await DisplayAlert("Empty", "Empty textboxes not good no good", "OK");
+            await DisplayAlert("Empty", location.ToString(), "OK"); ;
         }
         else if (string.IsNullOrEmpty(Email.Text))
         {

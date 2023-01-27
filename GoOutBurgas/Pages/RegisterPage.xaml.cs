@@ -26,6 +26,8 @@ public partial class RegisterPage : ContentPage
             Password.IsPassword = true;
         }
     }
+   // Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+
 
     private async void OnButtonClicked(object sender, EventArgs e)
     {

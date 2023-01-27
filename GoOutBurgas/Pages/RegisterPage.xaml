@@ -14,7 +14,6 @@
         </Style>
     </ContentPage.Resources>
     
-
     <ScrollView>
         
         <VerticalStackLayout
@@ -48,7 +47,7 @@
                 <Frame BorderColor="#2b62aa" HorizontalOptions="FillAndExpand">
                     
                     <Entry Margin="10,0,0,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" 
-                           Keyboard="Email" ClearButtonVisibility="WhileEditing" MaxLength="20"
+                           Keyboard="Email" ClearButtonVisibility="WhileEditing" MaxLength="30"
                            x:Name ="Email">
                         
                         <Entry.Behaviors>
