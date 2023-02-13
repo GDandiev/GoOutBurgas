@@ -4,10 +4,15 @@
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
               x:Class="GoOutBurgas.Pages.MapPage "
+             NavigationPage.HasNavigationBar="False"  
              Title="Map">
 
-    <Grid>
-        <maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid">
+    <StackLayout Margin="0">
+        <HorizontalStackLayout>
+            <SearchBar Placeholder="Search items..." HorizontalOptions="FillAndExpand" Margin="1,1,1,-10" MinimumWidthRequest="0"/>
+            <Button Text="Search" BackgroundColor="White" CornerRadius="0" TextColor="#2b62aa"/>
+        </HorizontalStackLayout>
+        <maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid" >
             <x:Arguments>
                 <MapSpan>
                     <x:Arguments>
@@ -23,6 +28,6 @@
                 </MapSpan>
             </x:Arguments>
         </maps:Map>
-    </Grid>
-    
+    </StackLayout>
+
 </ContentPage>

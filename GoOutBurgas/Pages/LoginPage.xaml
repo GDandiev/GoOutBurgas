@@ -45,7 +45,7 @@
 
                     <Entry Margin="0,0,0,0" VerticalOptions="Center" Placeholder="Email" IsPassword="False" Completed="EmailCompleted"
                            Keyboard="Email" TextColor="Gray" MaxLength="30"
-                           x:Name ="Email" IsTextPredictionEnabled="True" ReturnType="Next" >
+                           x:Name ="EntryEmail" IsTextPredictionEnabled="True" ReturnType="Next" >
                     </Entry>
 
                 </Frame>
@@ -90,7 +90,14 @@
             <Button Text="Login" FontAttributes="Bold" BackgroundColor="#2b62aa"
                     TextColor="White" VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Clicked="OnButtonClicked" FontSize="15" Margin="0,-15,0,-15" >
+                    Clicked="LoginBtnClicked" FontSize="15" Margin="0,-15,0,-15" >
+            </Button>
+
+            <!--ButtonLogin-->
+            <Button Text="Waypoint" FontAttributes="Bold" BackgroundColor="#2b62aa"
+                    TextColor="White" VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="Location" FontSize="15" Margin="0,-15,0,-15" >
             </Button>
 
             <!--Sign In-->

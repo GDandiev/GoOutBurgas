@@ -1,6 +1,10 @@
 using GoOutBurgas.Data;
 using GoOutBurgas.Model;
 using GoOutBurgas.Themes;
+using Microsoft.Maui.ApplicationModel.Communication;
+//using static Android.Graphics.ImageDecoder;
+//using static Android.Provider.MediaStore;
+
 namespace GoOutBurgas.Pages;
 
 public partial class LoginPage : ContentPage
@@ -23,21 +27,42 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new NavigationPage(new RegisterPage()));
     }
+    private async void Location(object sender, EventArgs e)
+    {
+        if (Email.Default.IsComposeSupported)
+        {
+            Location location = await Geolocation.Default.GetLastKnownLocationAsync();
 
-    private async void OnButtonClicked(object sender, EventArgs e)
+            string subject = "Hello I wanted to add this activity here at: ";
+            string body = "Here there is an [activity name goes here], and I added a photo as atachment [add photo]";
+            string[] recipients = new[] { "gooutburgas@gmail.com", "gooutburgas@gmail.com" };
+
+            var message = new EmailMessage
+            {
+                Subject = subject + location.ToString(),
+                Body = body,
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string>(recipients)
+            };
+
+           // message.Attachments.Add(new EmailAttachment(burgaslogotest.png));
+            await Email.Default.ComposeAsync(message);
+        }
+    }
+    private async void LoginBtnClicked(object sender, EventArgs e)
     {
         //  await Navigation.PushAsync(new NavigationPage(new MapPage()));
 
         Location location = await Geolocation.Default.GetLastKnownLocationAsync();
 
-        var email = Email.Text;
+        var email = EntryEmail.Text;
         var pass = Pass.Text;
      
-        if (string.IsNullOrEmpty(Email.Text) && string.IsNullOrEmpty(Pass.Text))
+        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
         {
             await DisplayAlert("Empty", location.ToString(), "OK"); ;
         }
-        else if (string.IsNullOrEmpty(Email.Text))
+        else if (string.IsNullOrEmpty(email))
         {
             await DisplayAlert("Empty", "Email missing", "OK");
         }
@@ -51,7 +76,7 @@ public partial class LoginPage : ContentPage
 
             try
             {
-                if (await notController.LoginCheck(Email.Text, Pass.Text) != null)
+                if (await notController.LoginCheck(email, Pass.Text) != null)
                 {
                     await Navigation.PushAsync(new NavigationPage(new MapPage()));
                 }
@@ -62,8 +87,7 @@ public partial class LoginPage : ContentPage
             }
             catch (Exception ex)
             {
-
-                await DisplayAlert("Error", "Something wrong happened: " + ex.Message, "PANIC");
+                await DisplayAlert("Error", ex.Message, "PANIC");
             }
         }
     }
@@ -88,14 +112,14 @@ public partial class LoginPage : ContentPage
     {
         //  await Navigation.PushAsync(new NavigationPage(new MapPage()));
 
-        var email = Email.Text;
+        var email = EntryEmail.Text;
         var pass = Pass.Text;
 
-        if (string.IsNullOrEmpty(Email.Text) && string.IsNullOrEmpty(Pass.Text))
+        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
         {
             await DisplayAlert("Empty", "Empty textboxes not good no good", "OK");
         }
-        else if (string.IsNullOrEmpty(Email.Text))
+        else if (string.IsNullOrEmpty(email))
         {
             await DisplayAlert("Empty", "Email missing", "OK");
         }
@@ -109,7 +133,7 @@ public partial class LoginPage : ContentPage
 
             try
             {
-                if (await notController.LoginCheck(Email.Text, Pass.Text) != null)
+                if (await notController.LoginCheck(email, pass) != null)
                 {
                     await Navigation.PushAsync(new NavigationPage(new MapPage()));
                 }
