@@ -49,11 +49,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Pages\MappedPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\burgaslogotest.png" />
 	  <None Remove="Resources\Images\cutebot.png" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\logoclear.png" />
 	  <None Remove="Resources\Images\thisisformail.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Pages\MappedPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

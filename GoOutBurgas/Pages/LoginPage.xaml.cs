@@ -25,7 +25,7 @@ public partial class LoginPage : ContentPage
 
     private async void GoToRegister(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new NavigationPage(new RegisterPage()));
+        await Navigation.PushAsync(new RegisterPage());
     }
     private async void Location(object sender, EventArgs e)
     {
@@ -53,14 +53,12 @@ public partial class LoginPage : ContentPage
     {
         //  await Navigation.PushAsync(new NavigationPage(new MapPage()));
 
-        Location location = await Geolocation.Default.GetLastKnownLocationAsync();
-
         var email = EntryEmail.Text;
         var pass = Pass.Text;
      
         if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
         {
-            await DisplayAlert("Empty", location.ToString(), "OK"); ;
+            await DisplayAlert("Empty", "Email and password are both missing or epmty", "OK"); ;
         }
         else if (string.IsNullOrEmpty(email))
         {
@@ -78,7 +76,8 @@ public partial class LoginPage : ContentPage
             {
                 if (await notController.LoginCheck(email, Pass.Text) != null)
                 {
-                    await Navigation.PushAsync(new NavigationPage(new MapPage()));
+                    await Navigation.PushAsync(new MapPage());
+                    //await Navigation.PushAsync(new NavigationPage(new MapPage()));
                 }
                 else
                 {
@@ -93,7 +92,8 @@ public partial class LoginPage : ContentPage
     }
     private async void TapGestureRecognizer_Tapped_For_SignUP(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new NavigationPage(new RegisterPage()));
+        await Navigation.PushAsync(new RegisterPage());
+       // await Navigation.PushAsync(new NavigationPage(new RegisterPage()));
     }
 
     void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -135,7 +135,10 @@ public partial class LoginPage : ContentPage
             {
                 if (await notController.LoginCheck(email, pass) != null)
                 {
-                    await Navigation.PushAsync(new NavigationPage(new MapPage()));
+                   //no await Navigation.PushAsync(new MappedPage());
+                    await Navigation.PushAsync(new MapPage()); //yes
+
+                    //no await Navigation.PushAsync(new NavigationPage(new MapPage()));
                 }
                 else
                 {

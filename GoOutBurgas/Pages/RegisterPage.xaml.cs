@@ -37,7 +37,7 @@ public partial class RegisterPage : ContentPage
             string password = Pass.Text;
             await notController.Register(email, password);
             await DisplayAlert("Welcome", "You have been registered successfully ", "Login");
-            await Navigation.PushAsync(new NavigationPage(new LoginPage()));
+            await Navigation.PushAsync(new LoginPage());
         }
         else
         {
