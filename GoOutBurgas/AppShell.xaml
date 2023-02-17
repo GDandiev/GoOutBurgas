@@ -3,13 +3,27 @@
     x:Class="GoOutBurgas.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:GoOutBurgas"
-    Shell.FlyoutBehavior="Disabled" 
+    xmlns:local="clr-namespace:GoOutBurgas.Pages"
+    Shell.FlyoutBehavior="Flyout" 
+    Shell.BackgroundColor="#2b62aa"
     FlyoutBackgroundColor="{AppThemeBinding Light=White, Dark=LightGray}"
     TabBarBackgroundColor="{AppThemeBinding Light=White, Dark=LightGray}">
 
-    <ShellContent Shell.TabBarIsVisible="True" Shell.BackgroundColor="#2b62aa"
+    <!--<ShellContent Shell.TabBarIsVisible="True" Shell.BackgroundColor="#2b62aa"
         ContentTemplate="{DataTemplate local:Pages.LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage" />-->
+    
+    <FlyoutItem Title="One">
+        <ShellContent FlyoutIcon="thisisformail.png"
+            Title="One"
+            ContentTemplate="{DataTemplate local:LoginPage}"
+            Route="OnePage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Two" FlyoutIcon="thisisformail.png">
+        <ShellContent
+            Title="Two"
+            ContentTemplate="{DataTemplate local:MapPage}"
+            Route="TwoPage" />
+    </FlyoutItem>
 
 </Shell>

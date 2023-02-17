@@ -13,7 +13,7 @@ public partial class LoginPage : ContentPage
     public LoginPage()
     {
         InitializeComponent();
-        ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+        // ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
 
         //Application.Current.UserAppTheme = AppTheme.Light;
         //if (mergedDictionaries != null)
@@ -22,32 +22,28 @@ public partial class LoginPage : ContentPage
         //    mergedDictionaries.Add(new LightTheme());
         //}
     }
-
-    private async void GoToRegister(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new RegisterPage());
-    }
-    private async void Location(object sender, EventArgs e)
+    private async void TapGestureRecognizer_Tapped_For_Logo(object sender, EventArgs e)
     {
         if (Email.Default.IsComposeSupported)
         {
             Location location = await Geolocation.Default.GetLastKnownLocationAsync();
 
-            string subject = "Hello I wanted to add this activity here at: ";
-            string body = "Here there is an [activity name goes here], and I added a photo as atachment [add photo]";
+            string subject = "In order to add your activity please atach a photo of the location:                                                                                                                                                                                                                                                                                                                                                                               ";
+            string body = "Activity name: ";
             string[] recipients = new[] { "gooutburgas@gmail.com", "gooutburgas@gmail.com" };
 
             var message = new EmailMessage
             {
-                Subject = subject + location.ToString(),
-                Body = body,
+                Subject = body,
+                Body = subject + location.ToString(),
                 BodyFormat = EmailBodyFormat.PlainText,
                 To = new List<string>(recipients)
             };
 
-           // message.Attachments.Add(new EmailAttachment(burgaslogotest.png));
+            // message.Attachments.Add(new EmailAttachment(burgaslogotest.png));
             await Email.Default.ComposeAsync(message);
         }
+
     }
     private async void LoginBtnClicked(object sender, EventArgs e)
     {
@@ -55,7 +51,7 @@ public partial class LoginPage : ContentPage
 
         var email = EntryEmail.Text;
         var pass = Pass.Text;
-     
+
         if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
         {
             await DisplayAlert("Empty", "Email and password are both missing or epmty", "OK"); ;
@@ -92,8 +88,10 @@ public partial class LoginPage : ContentPage
     }
     private async void TapGestureRecognizer_Tapped_For_SignUP(object sender, EventArgs e)
     {
+        //await Navigation.PushAsync(RegisterPage());
         await Navigation.PushAsync(new RegisterPage());
-       // await Navigation.PushAsync(new NavigationPage(new RegisterPage()));
+        //await Navigation.PushAsync(new RegisterPage());
+
     }
 
     void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -135,7 +133,7 @@ public partial class LoginPage : ContentPage
             {
                 if (await notController.LoginCheck(email, pass) != null)
                 {
-                   //no await Navigation.PushAsync(new MappedPage());
+                    //no await Navigation.PushAsync(new MappedPage());
                     await Navigation.PushAsync(new MapPage()); //yes
 
                     //no await Navigation.PushAsync(new NavigationPage(new MapPage()));
@@ -153,9 +151,9 @@ public partial class LoginPage : ContentPage
         }
 
     }
-    private  void EmailCompleted(object sender, EventArgs e)
+    private void EmailCompleted(object sender, EventArgs e)
     {
-       //string text = ((Entry)sender).Text;
+        //string text = ((Entry)sender).Text;
         string text = Pass.Text;
     }
 

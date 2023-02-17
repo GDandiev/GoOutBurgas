@@ -1,4 +1,6 @@
-﻿namespace GoOutBurgas;
+﻿using GoOutBurgas.Pages;
+
+namespace GoOutBurgas;
 
 public partial class App : Application
 {
