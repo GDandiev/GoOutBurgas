@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
-             Shell.Nav
-             Shell.FlyoutBehavior="Flyout"
+             Shell.TabBarIsVisible="True"
               x:Class="GoOutBurgas.Pages.MapPage ">
-
+            
+    
+    
     <StackLayout Margin="0">
         <HorizontalStackLayout>
             <SearchBar Placeholder="Search items..." HorizontalOptions="FillAndExpand" Margin="1,1,1,-10" MinimumWidthRequest="0"/>

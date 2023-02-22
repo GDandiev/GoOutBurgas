@@ -72,7 +72,12 @@ public partial class LoginPage : ContentPage
             {
                 if (await notController.LoginCheck(email, Pass.Text) != null)
                 {
-                    await Navigation.PushAsync(new MapPage());
+                     await Shell.Current.GoToAsync("MapPage");
+                    //AppShell shell = new AppShell();
+                    //await shell.GoToAsync("MapPage");
+                    //AppShell.SetTabBarIsVisible(Shell.Current,false);
+                   //await Navigation.PushAsync(new MapPage());
+
                     //await Navigation.PushAsync(new NavigationPage(new MapPage()));
                 }
                 else
