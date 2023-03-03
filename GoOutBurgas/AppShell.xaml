@@ -5,9 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:GoOutBurgas.Pages"
     Shell.TabBarIsVisible="False"
-    Shell.BackgroundColor="{AppThemeBinding Light = #2b62aa, Dark=#2b62aa}"
-    TabBarBackgroundColor="{AppThemeBinding Light=White, Dark=LightGray }"
-    Shell.TabBarUnselectedColor="#252525" Shell.TabBarTitleColor="#2b62aa">
+    Shell.BackgroundColor="{AppThemeBinding Light = #2b62aa, Dark=#2f3889}"
+    TabBarBackgroundColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}"
+    Shell.TabBarUnselectedColor="{AppThemeBinding Light=#252525, Dark=#25252}" Shell.TabBarTitleColor="{AppThemeBinding Light= #2b62aa, Dark= White}"
+    Shell.TabBarDisabledColor="White">
+    
 
     <!--<ShellContent 
         Shell.TabBarIsVisible="False" 
@@ -17,11 +19,6 @@
         Route="LoginPage" />-->
 
     <TabBar>
-        
-        <!--<Tab Title="Log Out" 
-             Icon="burgaslogotest.png">
-            <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
-        </Tab>-->
         
         <Tab Title="Map"
              Icon="{AppThemeBinding Light=thisisformaps.png, Dark=thisisformapsdark.png}">
