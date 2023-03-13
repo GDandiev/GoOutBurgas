@@ -48,10 +48,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="Pages\MappedPage.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Fonts\Lexend-Black.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-ExtraBold.ttf" />
@@ -69,12 +65,6 @@
 	  <None Remove="Resources\Images\thisisformaps.png" />
 	  <None Remove="Resources\Images\thisisformapsdark.png" />
 	  <None Remove="Resources\Images\thisisfortrophy.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Pages\MappedPage.xaml">
-	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

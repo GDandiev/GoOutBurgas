@@ -9,10 +9,15 @@
     
     
     <StackLayout Margin="0">
+        
         <HorizontalStackLayout BackgroundColor="#252525">
+            
             <SearchBar Placeholder="Search items..." HorizontalOptions="FillAndExpand" Margin="1,1,1,-10" MinimumWidthRequest="0" BackgroundColor="{AppThemeBinding Light=white,Dark=#252525}"/>
+            
             <Button Text="Search" BackgroundColor="{AppThemeBinding Dark=#252525, Light=white}" CornerRadius="0" TextColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}"/>
+            
         </HorizontalStackLayout>
+        
         <maps:Map IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid" >
             <x:Arguments>
                 <MapSpan>
@@ -28,7 +33,9 @@
                     </x:Arguments>
                 </MapSpan>
             </x:Arguments>
+            
             <maps:Map.Pins>
+                
                 <maps:Pin Label="Тенис на маса"
                       Address="Две маси"
                       Type="Place">
@@ -41,6 +48,7 @@
                         </sensors:Location>
                     </maps:Pin.Location>
                 </maps:Pin>
+                
             </maps:Map.Pins>
         </maps:Map>
     </StackLayout>
