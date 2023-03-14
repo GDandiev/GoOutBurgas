@@ -25,11 +25,11 @@
             <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
         </Tab>
          
-        <Tab Title="Tournament"
+        <Tab Title="Tournament" IsVisible="False"
              Icon="{AppThemeBinding Light=thisisfortrophy.png, Dark=trophydark.png}">
             <ShellContent ContentTemplate="{DataTemplate local:TournamentTreePage}" />
         </Tab>
-
+       
     </TabBar>
 
 </Shell>

@@ -13,14 +13,6 @@ public partial class LoginPage : ContentPage
     public LoginPage()
     {
         InitializeComponent();
-        // ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
-
-        //Application.Current.UserAppTheme = AppTheme.Light;
-        //if (mergedDictionaries != null)
-        //{
-        //    mergedDictionaries.Clear();
-        //    mergedDictionaries.Add(new LightTheme());
-        //}
     }
     private async void TapGestureRecognizer_Tapped_For_Logo(object sender, EventArgs e)
     {
@@ -96,7 +88,7 @@ public partial class LoginPage : ContentPage
                 }
             }
         }
-        
+
     }
     private async void TapGestureRecognizer_Tapped_For_SignUP(object sender, EventArgs e)
     {
@@ -120,48 +112,48 @@ public partial class LoginPage : ContentPage
 
     private async void OnPasswordCompleted(object sender, EventArgs e)
     {
-        //  await Navigation.PushAsync(new NavigationPage(new MapPage()));
-
         var email = EntryEmail.Text;
         var pass = Pass.Text;
 
-        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
+        if (EntryEmail.TextColor == Color.FromHex("#8b0000") || EntryEmail.TextColor == Color.FromHex("#FF0000"))
         {
-            await DisplayAlert("Empty", "Empty textboxes not good no good", "OK");
-        }
-        else if (string.IsNullOrEmpty(email))
-        {
-            await DisplayAlert("Empty", "Email missing", "OK");
-        }
-        else if (string.IsNullOrEmpty(Pass.Text))
-        {
-            await DisplayAlert("Empty", "Password missing", "OK");
+            await DisplayAlert("Invalid Email", "You need to be using a valid email", "Ok");
         }
         else
         {
-            User loginTable = new User();
-
-            try
+            if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(Pass.Text))
             {
-                if (await notController.LoginCheck(email, pass) != null)
-                {
-                    //no await Navigation.PushAsync(new MappedPage());
-                    await Navigation.PushAsync(new MapPage()); //yes
-
-                    //no await Navigation.PushAsync(new NavigationPage(new MapPage()));
-                }
-                else
-                {
-                    await DisplayAlert("Wrong", "Email or password ", "OK");
-                }
+                await DisplayAlert("Empty", "Email and password are both missing or epmty", "OK"); ;
             }
-            catch (Exception ex)
+            else if (string.IsNullOrEmpty(email))
             {
+                await DisplayAlert("Empty", "Email missing", "OK");
+            }
+            else if (string.IsNullOrEmpty(Pass.Text))
+            {
+                await DisplayAlert("Empty", "Password missing", "OK");
+            }
+            else
+            {
+                User loginTable = new User();
 
-                await DisplayAlert("Error", "Something wrong happened: " + ex.Message, "PANIC");
+                try
+                {
+                    if (await notController.LoginCheck(email, Pass.Text) != null)
+                    {
+                        await Shell.Current.GoToAsync("MapPage");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Wrong", "Email or password ", "OK");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "PANIC");
+                }
             }
         }
-
     }
     private void EmailCompleted(object sender, EventArgs e)
     {
