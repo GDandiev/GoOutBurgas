@@ -15,7 +15,7 @@
 		<ApplicationTitle>GoOutBurgas</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.gooutburgas</ApplicationId>
+		<ApplicationId>com.TosterAndCo.gooutburgas</ApplicationId>
 		<ApplicationIdGuid>d0d9b45b-fccb-469d-a58f-b40587d0b00f</ApplicationIdGuid>
 
 		<!-- Versions -->

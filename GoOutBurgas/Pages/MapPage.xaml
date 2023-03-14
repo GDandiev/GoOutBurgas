@@ -35,8 +35,8 @@
             </x:Arguments>
             
             <maps:Map.Pins>
-                
-                <maps:Pin Label="Тенис на маса"
+                <!--Морска градина-->
+                    <maps:Pin Label="Тенис на маса"
                       Address="Две маси"
                       Type="Place">
                     <maps:Pin.Location>
@@ -48,7 +48,59 @@
                         </sensors:Location>
                     </maps:Pin.Location>
                 </maps:Pin>
-                
+                <!--Сарафово-->
+                    <maps:Pin Label="Тенис на маса"
+                      Address="Две маси"
+                      Type="Place">
+                    <maps:Pin.Location>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>42.557597</x:Double>
+                                <x:Double>27.519289</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                    </maps:Pin.Location>
+                </maps:Pin>
+                <!--Цурка-->
+                    <maps:Pin Label="Тенис на маса"
+                      Address="Две маси"
+                      Type="Place">
+                    <maps:Pin.Location>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>42.511382</x:Double>
+                                <x:Double>27.476660</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                    </maps:Pin.Location>
+                </maps:Pin>
+                <!--Ветрен -->
+                    <maps:Pin Label="Тенис на маса"
+                      Address="Четири маси"
+                      Type="Place">
+                    <maps:Pin.Location>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>42.612159</x:Double>
+                                <x:Double>27.398099</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                    </maps:Pin.Location>
+                </maps:Pin>
+                <!--Цурка-->
+                <maps:Pin  Label="Тенис на маса"
+                      Address="Платена"
+                      Type="SavedPin">
+                    <maps:Pin.Location>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>42.515953</x:Double>
+                                <x:Double>27.448304</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                    </maps:Pin.Location>
+                </maps:Pin>
+
             </maps:Map.Pins>
         </maps:Map>
     </StackLayout>
