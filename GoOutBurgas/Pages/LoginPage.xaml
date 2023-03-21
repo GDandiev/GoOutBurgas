@@ -10,17 +10,22 @@
     
     <!--EmailColor -->
         <ContentPage.Resources>
+            
         <Style x:Key="InvalidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="{AppThemeBinding Light=#FF0000, Dark=#8b0000}" />
         </Style>
+            
         <Style x:Key="ValidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="#2b62aa" />
         </Style>
+            
     </ContentPage.Resources>
     
        <!--TopColor-->
     <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light = #2b62aa, Dark=#2f3889}" StatusBarStyle="LightContent" />
+
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light =#3070c3, Dark=#2b62aa}" StatusBarStyle="LightContent" />
+        
     </ContentPage.Behaviors>
 
     <ScrollView VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Always" 
@@ -50,7 +55,7 @@
 
             <VerticalStackLayout>
 
-                <Label Text="Welcome to Go Out Burgas, please sign in !" FontSize="25" 
+                <Label Text="Welcome, please sign in !" FontSize="22" 
                 FontFamily="LexendRegular" TextColor="{AppThemeBinding Light=#2f3889, Dark=#2b62aa}" HorizontalTextAlignment ="Center"/>
 
             </VerticalStackLayout>
@@ -122,12 +127,12 @@
 
                 <Label Text="Show password" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light=#2b62aa, Dark=gray}"/>
 
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" x:Name="Check" Margin="-5,-5,0,0" Color="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}"/>
+                <Switch IsToggled="False" x:Name="Switch" Toggled="OnSwitch"  ThumbColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}" Margin="-5,-5,0,0"/>
 
             </HorizontalStackLayout>
 
-            <!--ButtonLogin-->       
-              
+            <!--ButtonLogin-->
+
             <Button Text="Login" FontAttributes="Bold" BackgroundColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}"
                     TextColor="{AppThemeBinding Light=White, Dark=#252525}" VerticalOptions="Center"
                     HorizontalOptions="Center" 
@@ -138,7 +143,7 @@
                 
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="-10,0,0,0" >
 
-                <Label Text="If you don't already have an account " FontAttributes="Bold" FontSize="12" TextColor="Gray"/>
+                <Label Text="If you don't have an account " FontAttributes="Bold" FontSize="12" TextColor="Gray"/>
 
                 <Label Text="SIGN UP" FontSize="12" FontAttributes="Bold" TextColor="#2b62aa" />
 
@@ -149,7 +154,21 @@
                 </HorizontalStackLayout.GestureRecognizers>
 
             </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="-10,0,0,0" >
 
+                <Label Text="Forgot your password " FontAttributes="Bold" FontSize="12" TextColor="Gray"/>
+
+                <Label Text="CLICK HERE" FontSize="12" FontAttributes="Bold" TextColor="#2b62aa" />
+
+                <HorizontalStackLayout.GestureRecognizers>
+
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_ForgotPass" />
+
+                </HorizontalStackLayout.GestureRecognizers>
+
+            </HorizontalStackLayout>
+              
         </VerticalStackLayout>
 
     </ScrollView>

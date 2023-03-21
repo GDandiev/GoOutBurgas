@@ -98,15 +98,17 @@ public partial class LoginPage : ContentPage
 
     }
 
-    void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    void OnSwitch(object sender, ToggledEventArgs e)
     {
-        if (Check.IsChecked == true)
+        if (Switch.IsToggled == true)
         {
             Pass.IsPassword = false;
+            Pass.Keyboard = Pass.Keyboard; 
         }
         else
         {
             Pass.IsPassword = true;
+            Pass.Keyboard = Pass.Keyboard;
         }
     }
 
@@ -157,8 +159,12 @@ public partial class LoginPage : ContentPage
     }
     private void EmailCompleted(object sender, EventArgs e)
     {
-        //string text = ((Entry)sender).Text;
-        string text = Pass.Text;
+        string text = ((Entry)sender).Text;
+        //string text = Pass.Text;
     }
 
+    private async void TapGestureRecognizer_Tapped_For_ForgotPass(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new ForgottenPasswordPage());
+    }
 }

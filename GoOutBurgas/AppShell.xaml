@@ -20,16 +20,12 @@
 
     <TabBar>
         
-        <Tab Title="Map"
-             Icon="{AppThemeBinding Light=thisisformaps.png, Dark=thisisformapsdark.png}">
+        <Tab Title="Map" Icon="{AppThemeBinding Light=thisisformaps.png, Dark=thisisformapsdark.png}">
+            
             <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+            
         </Tab>
          
-        <Tab Title="Tournament" IsVisible="False"
-             Icon="{AppThemeBinding Light=thisisfortrophy.png, Dark=trophydark.png}">
-            <ShellContent ContentTemplate="{DataTemplate local:TournamentTreePage}" />
-        </Tab>
-       
     </TabBar>
 
 </Shell>
