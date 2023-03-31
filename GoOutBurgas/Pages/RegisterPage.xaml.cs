@@ -13,20 +13,24 @@ public partial class RegisterPage : ContentPage
         InitializeComponent();
     }
 
-    void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    void OnSwitch(object sender, ToggledEventArgs e)
     {
-        if (Check.IsChecked == true)
+        if (Switch.IsToggled == true)
         {
-            Pass.IsPassword = false;
             Password.IsPassword = false;
+            Password.Keyboard = Pass.Keyboard;
+            Pass.IsPassword = false;
+            Pass.Keyboard = Pass.Keyboard;
         }
         else
         {
-            Pass.IsPassword = true;
             Password.IsPassword = true;
+            Password.Keyboard = Pass.Keyboard;
+            Pass.IsPassword = true;
+            Pass.Keyboard = Pass.Keyboard;
         }
     }
-   // Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+    // Location location = await Geolocation.Default.GetLastKnownLocationAsync();
 
 
     private async void OnButtonClicked(object sender, EventArgs e)

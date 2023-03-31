@@ -1,42 +1,55 @@
-using AndroidX.Navigation;
+using GoOutBurgas.Data;
 
 namespace GoOutBurgas.Pages;
 
 public partial class ForgottenPasswordPage : ContentPage
 {
-	public ForgottenPasswordPage()
-	{
-		InitializeComponent();
-	}
-    void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    Database notController = new Database();
+
+    public ForgottenPasswordPage()
     {
-        if (Check.IsChecked == true)
+        InitializeComponent();
+    }
+
+    void OnSwitch(object sender, ToggledEventArgs e)
+    {
+        if (Switch.IsToggled == true)
         {
-            Pass.IsPassword = false;
             Password.IsPassword = false;
+            Password.Keyboard = Pass.Keyboard;
+            Pass.IsPassword = false;
+            Pass.Keyboard = Pass.Keyboard;
         }
         else
         {
-            Pass.IsPassword = true;
             Password.IsPassword = true;
+            Password.Keyboard = Pass.Keyboard;
+            Pass.IsPassword = true;
+            Pass.Keyboard = Pass.Keyboard;
         }
     }
-    // Location location = await Geolocation.Default.GetLastKnownLocationAsync();
-
 
     private async void OnButtonClicked(object sender, EventArgs e)
     {
-        if (Pass.Text == Password.Text)
+        try
         {
-            string email = Email.Text;
-            string password = Pass.Text;
-            await notController.Register(email, password);
-            await DisplayAlert("Welcome", "You have been registered successfully ", "Login");
-            await Navigation.PushAsync(new LoginPage());
+            if (Pass.Text == Password.Text)
+            {
+                string email = Email.Text;
+                string password = Pass.Text;
+                var success = await notController.UpdateUser(email, password);
+
+            }
+            else
+            {
+                await DisplayAlert("Error", "The passwords are not the same", "OK");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            await DisplayAlert("Error", "The passwords are not the same", "OK");
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            await DisplayAlert("Error", "An error occurred while updating the user", "OK");
         }
     }
+
 }
