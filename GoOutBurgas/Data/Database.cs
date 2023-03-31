@@ -36,7 +36,6 @@ namespace GoOutBurgas.Data
             await Init();
             return await MainDatabase.Table<User>().Where(t => t.Admin).ToListAsync();
 
-            //return await Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
         public async Task<bool> LoginUser(string acc, string pass)
@@ -47,6 +46,7 @@ namespace GoOutBurgas.Data
 
             return true;
         }
+
         public async Task<User> LoginCheck(string loginCheck, string passCheck)
         {
             await Init();
@@ -91,6 +91,23 @@ namespace GoOutBurgas.Data
         {
             await Init();
             return await MainDatabase.DeleteAsync(users);
+        }
+
+        public async Task<User> UpdateUser(string email, string pass)
+        {
+            await Init();
+
+            User searchDb = await MainDatabase.Table<User>().Where(i => i.Name == email).FirstOrDefaultAsync();
+
+            if (searchDb != null)
+            {
+                searchDb.Name = email;
+                searchDb.Password = pass;
+
+                await MainDatabase.UpdateAsync(searchDb);
+            }
+
+            return searchDb;
         }
     }
 }

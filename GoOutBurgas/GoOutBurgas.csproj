@@ -34,7 +34,7 @@
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\goout.svg" Color="#2b62aa" TintColor="White" />
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\goout.svg" Color="#2b62aa" BaseSize="128,128" TintColor ="White"/>
+		<MauiSplashScreen Include="Resources\Splash\goout.svg" Color="#2b62aa" BaseSize="128,128" TintColor="White" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -57,6 +57,7 @@
 	  <None Remove="Resources\Fonts\Lexend-SemiBold.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-Thin.ttf" />
 	  <None Remove="Resources\Fonts\Lexend-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Images\forgotimg.png" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\logo6.png" />
 	  <None Remove="Resources\Images\logoclear.png" />

@@ -35,7 +35,7 @@
             <!--Email Layout-->
             <StackLayout Orientation="Horizontal">
 
-                <Frame HasShadow="True" HeightRequest="70" WidthRequest="70" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
+                <Frame HasShadow="True" HeightRequest="70" WidthRequest="90" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
 
                     <Image Source="{AppThemeBinding Light=thisisformail.png, Dark=thisisformaildark.png}"
                            SemanticProperties.Description="Cute dot net bot waving hi to you!"
@@ -66,7 +66,7 @@
             <!--Password TextBox-->
             <StackLayout Orientation="Horizontal">
 
-                <Frame HasShadow="True" HeightRequest="70" WidthRequest="70" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
+                <Frame HasShadow="True" HeightRequest="70" WidthRequest="90" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
 
                     <Image Source="{AppThemeBinding Light=lock.png, Dark=lockdark.png}"
                            HeightRequest="200"
@@ -90,7 +90,7 @@
 
             <StackLayout Orientation="Horizontal">
 
-                <Frame HasShadow="True" HeightRequest="70" WidthRequest="70" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
+                <Frame HasShadow="True" HeightRequest="70" WidthRequest="90" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
                     <Image Source="{AppThemeBinding Light=lock.png, Dark=lockdark.png}"
                            SemanticProperties.Description="Cute dot net bot waving hi to you!"
                            HeightRequest="200"
@@ -115,8 +115,8 @@
 
                 <Label Text="Show password" FontAttributes="Bold" FontSize="16"/>
 
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" x:Name="Check" Color="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}" Margin="-5,-5,0,0" />
-
+                <Switch IsToggled="False" x:Name="Switch" Toggled="OnSwitch"  ThumbColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}" Margin="-5,-5,0,0"/>
+                
             </HorizontalStackLayout>
 
             <!--ButtonLogin-->
