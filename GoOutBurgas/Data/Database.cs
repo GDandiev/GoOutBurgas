@@ -42,7 +42,7 @@ namespace GoOutBurgas.Data
         {
             MainDatabase = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
-            var user = await MainDatabase.Table<User>().Where(x => x.Name == acc).FirstOrDefaultAsync();
+            var user = await MainDatabase.Table<User>().Where(x => x.Email == acc).FirstOrDefaultAsync();
 
             return true;
         }
@@ -51,7 +51,7 @@ namespace GoOutBurgas.Data
         {
             await Init();
 
-            User searchDb = await MainDatabase.Table<User>().Where(a => a.Name == loginCheck && a.Password == passCheck).FirstOrDefaultAsync();
+            User searchDb = await MainDatabase.Table<User>().Where(a => a.Email == loginCheck && a.Password == passCheck).FirstOrDefaultAsync();
             return searchDb;
         }
 
@@ -60,7 +60,7 @@ namespace GoOutBurgas.Data
             await Init();
 
             User userToInsert = new User();
-            userToInsert.Name = email;
+            userToInsert.Email = email;
             userToInsert.Password = pass;
             await MainDatabase.InsertAsync(userToInsert);
 
@@ -97,11 +97,11 @@ namespace GoOutBurgas.Data
         {
             await Init();
 
-            User searchDb = await MainDatabase.Table<User>().Where(i => i.Name == email).FirstOrDefaultAsync();
+            User searchDb = await MainDatabase.Table<User>().Where(i => i.Email == email).FirstOrDefaultAsync();
 
             if (searchDb != null)
             {
-                searchDb.Name = email;
+                searchDb.Email = email;
                 searchDb.Password = pass;
 
                 await MainDatabase.UpdateAsync(searchDb);
