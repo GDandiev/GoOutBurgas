@@ -1,5 +1,5 @@
 using GoOutBurgas.Model;
-using GoOutBurgas.Data;
+using GoOutBurgas.Controller;
 
 
 namespace GoOutBurgas.Pages;
