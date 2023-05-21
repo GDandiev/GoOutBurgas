@@ -64,7 +64,7 @@
 
             <StackLayout Orientation="Horizontal" Margin="-15,0,0,0" >
 
-                <Frame HasShadow="True" HeightRequest="70" WidthRequest="90" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
+                <Frame HasShadow="True" HeightRequest="80" WidthRequest="80" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray" >
 
                     <Image Source="{AppThemeBinding Light=thisisformail.png, Dark=thisisformaildark}"
                            HeightRequest="50"
@@ -97,7 +97,7 @@
 
             <StackLayout Orientation="Horizontal" Margin="-15,0,0,0" >
 
-                <Frame HasShadow="True" HeightRequest="70" WidthRequest="90" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray">
+                <Frame HasShadow="True" HeightRequest="80" WidthRequest="80" CornerRadius="100" BackgroundColor="{AppThemeBinding Light=White, Dark=#252525}" BorderColor="gray">
 
                     <Image Source="{AppThemeBinding Light=lock.png, Dark=lockdark.png}"
                             HeightRequest="50"

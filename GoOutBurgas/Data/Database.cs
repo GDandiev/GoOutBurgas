@@ -11,10 +11,12 @@ namespace GoOutBurgas.Data
     class Database
     {
         SQLiteAsyncConnection MainDatabase;
+
         public Database()
         {
 
         }
+
         async Task Init()
         {
             if (MainDatabase is not null)

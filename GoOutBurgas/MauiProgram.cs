@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using GoOutBurgas.Pages;
-using GoOutBurgas.Controller;
+using GoOutBurgas.Data;
 using CommunityToolkit.Maui;
 
 namespace GoOutBurgas;
