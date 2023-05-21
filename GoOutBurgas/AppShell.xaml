@@ -7,7 +7,8 @@
     Shell.TabBarIsVisible="False"
     Shell.BackgroundColor="{AppThemeBinding Light = #2b62aa, Dark=#2f3889}"
     TabBarBackgroundColor="{AppThemeBinding Light=#2b62aa, Dark=#2f3889}"
-    Shell.TabBarUnselectedColor="{AppThemeBinding Light=White, Dark=White}" Shell.TabBarTitleColor="{AppThemeBinding Light= #2b62aa, Dark= White}"
+    Shell.TabBarUnselectedColor="{AppThemeBinding Light=White, Dark=White}" 
+    Shell.TabBarTitleColor="{AppThemeBinding Light= White, Dark= White}"
     Shell.TabBarDisabledColor="#252525">
     
     <TabBar>
