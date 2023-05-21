@@ -38,7 +38,7 @@ public partial class ForgottenPasswordPage : ContentPage
                 string email = Email.Text;
                 string password = Pass.Text;
                 var success = await notController.UpdateUser(email, password);
-
+                await DisplayAlert("Reset", "Your password has been successfully reset.", "Login");
             }
             else
             {
@@ -47,8 +47,7 @@ public partial class ForgottenPasswordPage : ContentPage
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-            await DisplayAlert("Error", "An error occurred while updating the user", "OK");
+            await DisplayAlert("Error", ""+ ex, "OK");
         }
     }
 
